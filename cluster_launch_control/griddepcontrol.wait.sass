@@ -1,0 +1,66 @@
+
+Fatbin ptx code:
+================
+arch = sm_100
+code version = [8,7]
+host = linux
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_100a
+code version = [1,8]
+host = linux
+compile_size = 64bit
+
+	code for sm_100a
+	.target	sm_100a
+
+		Function : _Z17griddep_wait_testPj
+	.headerflags	@"EF_CUDA_SM100 EF_CUDA_VIRTUAL_SM(EF_CUDA_SM100)"
+        /*0000*/                   LDC R1, c[0x0][0x37c] ;       /* 0x0000df00ff017b82 */
+                                                                 /* 0x000fe20000000800 */
+        /*0010*/                   S2R R5, SR_TID.X ;            /* 0x0000000000057919 */
+                                                                 /* 0x000e2e0000002100 */
+        /*0020*/                   LDC.64 R2, c[0x0][0x380] ;    /* 0x0000e000ff027b82 */
+                                                                 /* 0x000e220000000a00 */
+        /*0030*/                   LDCU.64 UR4, c[0x0][0x358] ;  /* 0x00006b00ff0477ac */
+                                                                 /* 0x000e220008000a00 */
+        /*0040*/                   ACQBULK ;                     /* 0x000000000000782e */
+                                                                 /* 0x000fe20000000000 */
+        /*0050*/                   STG.E desc[UR4][R2.64], R5 ;  /* 0x0000000502007986 */
+                                                                 /* 0x001fe2000c101904 */
+        /*0060*/                   EXIT ;                        /* 0x000000000000794d */
+                                                                 /* 0x000fea0003800000 */
+        /*0070*/                   BRA 0x70;                     /* 0xfffffffc00fc7947 */
+                                                                 /* 0x000fc0000383ffff */
+        /*0080*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*0090*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00a0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00b0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00c0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00d0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00e0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+        /*00f0*/                   NOP;                          /* 0x0000000000007918 */
+                                                                 /* 0x000fc00000000000 */
+		..........
+
+
+
+Fatbin ptx code:
+================
+arch = sm_100a
+code version = [8,7]
+host = linux
+compile_size = 64bit
+compressed
+ptxasOptions = 
