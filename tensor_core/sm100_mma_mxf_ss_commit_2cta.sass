@@ -1,0 +1,98 @@
+
+Fatbin ptx code:
+================
+arch = sm_100
+code version = [8,7]
+host = linux
+compile_size = 64bit
+compressed
+ptxasOptions = 
+
+Fatbin elf code:
+================
+arch = sm_100a
+code version = [1,8]
+host = linux
+compile_size = 64bit
+
+	code for sm_100a
+	.target	sm_100a
+
+		Function : _Z22sm100_mma_mxf4_ss_testPjS_mmjjmjjj
+	.headerflags	@"EF_CUDA_SM100 EF_CUDA_VIRTUAL_SM(EF_CUDA_SM100)"
+        /*0000*/                   LDC R1, c[0x0][0x37c] ;                                                                       /* 0x0000df00ff017b82 */
+                                                                                                                                 /* 0x000e220000000800 */
+        /*0010*/                   LDCU UR4, c[0x0][0x3a4] ;                                                                     /* 0x00007480ff0477ac */
+                                                                                                                                 /* 0x000e620008000800 */
+        /*0020*/                   PLOP3.LUT P0, PT, PT, PT, PT, 0x80, 0x8 ;                                                     /* 0x000000000008781c */
+                                                                                                                                 /* 0x000fe20003f0f070 */
+        /*0030*/                   LDCU UR5, c[0x0][0x3ac] ;                                                                     /* 0x00007580ff0577ac */
+                                                                                                                                 /* 0x000ea20008000800 */
+        /*0040*/                   LDCU UR6, c[0x0][0x3a0] ;                                                                     /* 0x00007400ff0677ac */
+                                                                                                                                 /* 0x000ee20008000800 */
+        /*0050*/                   LDCU.128 UR8, c[0x0][0x390] ;                                                                 /* 0x00007200ff0877ac */
+                                                                                                                                 /* 0x000f220008000c00 */
+        /*0060*/                   LDCU.64 UR12, c[0x0][0x3b0] ;                                                                 /* 0x00007600ff0c77ac */
+                                                                                                                                 /* 0x000f620008000a00 */
+        /*0070*/                   UISETP.NE.U32.AND UP0, UPT, UR4, URZ, UPT ;                                                   /* 0x000000ff0400728c */
+                                                                                                                                 /* 0x002fc6000bf05070 */
+        /*0080*/                   UMOV UR4, URZ ;                                                                               /* 0x000000ff00047c82 */
+                                                                                                                                 /* 0x00cfd00008000000 */
+        /*0090*/               @P0 ELECT P1, URZ, PT ;                                                                           /* 0x0000000000ff082f */
+                                                                                                                                 /* 0x000fe20003820000 */
+        /*00a0*/                   UTCOMMA.2CTA.4X gdesc[UR8], gdesc[UR10], tmem[UR6], tmem[UR4], idesc[UR5], tmem[UR12], UP0 ;  /* 0x800c040a080075ea */
+                                                                                                                                 /* 0x0303d80008200006 */
+        /*00b0*/               @P1 PLOP3.LUT P0, PT, P1, PT, PT, 0x8, 0x80 ;                                                     /* 0x000000000080181c */
+                                                                                                                                 /* 0x000fe40000f0e170 */
+        /*00c0*/                   PLOP3.LUT P1, PT, PT, PT, PT, 0x8, 0x80 ;                                                     /* 0x000000000080781c */
+                                                                                                                                 /* 0x000fd60003f2e170 */
+        /*00d0*/               @P0 BRA.U.ANY 0x90 ;                                                                              /* 0xfffffffd00ec0947 */
+                                                                                                                                 /* 0x002fea000393ffff */
+        /*00e0*/                   PLOP3.LUT P0, PT, PT, PT, PT, 0x80, 0x8 ;                                                     /* 0x000000000008781c */
+                                                                                                                                 /* 0x000fe20003f0f070 */
+        /*00f0*/                   LDCU UR4, c[0x0][0x3b8] ;                                                                     /* 0x00007700ff0477ac */
+                                                                                                                                 /* 0x000e620008000800 */
+        /*0100*/                   NOP ;                                                                                         /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fd60000000000 */
+        /*0110*/               @P0 ELECT P1, URZ, PT ;                                                                           /* 0x0000000000ff082f */
+                                                                                                                                 /* 0x000fe20003820000 */
+        /*0120*/                   UTCBAR.2CTA [UR4], URZ ;                                                                      /* 0x000000ff040073e9 */
+                                                                                                                                 /* 0x0025d800082000ff */
+        /*0130*/               @P1 PLOP3.LUT P0, PT, P1, PT, PT, 0x8, 0x80 ;                                                     /* 0x000000000080181c */
+                                                                                                                                 /* 0x000fe40000f0e170 */
+        /*0140*/                   PLOP3.LUT P1, PT, PT, PT, PT, 0x8, 0x80 ;                                                     /* 0x000000000080781c */
+                                                                                                                                 /* 0x000fd60003f2e170 */
+        /*0150*/               @P0 BRA.U.ANY 0x110 ;                                                                             /* 0xfffffffd00ec0947 */
+                                                                                                                                 /* 0x004fea000393ffff */
+        /*0160*/                   EXIT ;                                                                                        /* 0x000000000000794d */
+                                                                                                                                 /* 0x000fea0003800000 */
+        /*0170*/                   BRA 0x170;                                                                                    /* 0xfffffffc00fc7947 */
+                                                                                                                                 /* 0x000fc0000383ffff */
+        /*0180*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*0190*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01a0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01b0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01c0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01d0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01e0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+        /*01f0*/                   NOP;                                                                                          /* 0x0000000000007918 */
+                                                                                                                                 /* 0x000fc00000000000 */
+		..........
+
+
+
+Fatbin ptx code:
+================
+arch = sm_100a
+code version = [8,7]
+host = linux
+compile_size = 64bit
+compressed
+ptxasOptions = 
